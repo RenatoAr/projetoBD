@@ -1,6 +1,6 @@
 
 
-<body background="grey lighten-1">
+<body background="backIndex.jpg">
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Testes em Aeronaves</a>
       
@@ -19,7 +19,7 @@
 
   <br><br>
   <div class="row">
-  	<div class="col s12 l6 center-align blue-text text-lighten-1"><h3>Este é um sistema para cadastro e consulta dos testes realizados nas aeronaves locais.</h3>
+  	<div class="col s12 l6 center-align blue-text text-darken-4"><h3>Este é um sistema para cadastro e consulta das inspeções realizadas nas aeronaves locais.</h3>
   	<h3> Selecione a opção desejada ao lado:</h3>
   	</div>
   	

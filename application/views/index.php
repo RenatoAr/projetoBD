@@ -15,7 +15,7 @@
 
 		  	<div class="col l6 center-align">
 		  		
-		    		<a href="<?= base_url('cadastro') ?>" class="waves-effect waves-light btn-large blue lighten-1">CADASTRO</a>
+		    		<a href="<?= base_url('index.php/cadastro') ?>" class="waves-effect waves-light btn-large blue lighten-1">CADASTRO</a>
 		    </div>
 
 		    <br><br>
@@ -23,7 +23,7 @@
 		    <br><br>
 
 		    <div class="col l6 center-align">
-		    		<a href="<?= base_url('consulta') ?>" class="waves-effect waves-light btn-large blue lighten-1">CONSULTA</a>      
+		    		<a href="<?= base_url('index.php/consulta') ?>" class="waves-effect waves-light btn-large blue lighten-1">CONSULTA</a>      
 		  	</div>
 		  </div>
 		    <div class="row">

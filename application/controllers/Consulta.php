@@ -4,6 +4,8 @@ class Consulta extends CI_Controller {
 
 	public function index()
     {
+        $aeronave = $this->input->get('aeronave');
+        print($aeronave);
         $this->load->view('templates/header');
         $this->load->view('pages/consulta');
         //$this->load->view('pages/nome');

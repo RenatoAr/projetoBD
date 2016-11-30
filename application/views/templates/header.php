@@ -8,7 +8,7 @@
 
   <title>Inspeção em Aeronaves</title>
 
-  <nav class="light-blue lighten-1" role="navigation">
+  <nav class="blue darken-4" role="navigation">
 	  <div class="nav-wrapper container"><a id="logo-container" href="<?= base_url('index.php') ?>" class="brand-logo">Inspeção em Aeronaves</a>
 	      
 	  </div>

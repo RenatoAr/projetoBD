@@ -5,7 +5,6 @@ class Cadastro extends CI_Controller {
     {
         $this->load->view('templates/header');
         $this->load->view('pages/cadastro');
-        //$this->load->view('pages/nome');
         $this->load->view('templates/footer');
     }
     public function view($page = 'home')

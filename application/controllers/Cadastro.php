@@ -1,6 +1,13 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Cadastro extends CI_Controller {
-
+	public function index()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('pages/cadastro');
+        //$this->load->view('pages/nome');
+        $this->load->view('templates/footer');
+    }
         public function view($page = 'home')
         {
         	if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
@@ -11,8 +18,8 @@ class Cadastro extends CI_Controller {
 
 	        $data['title'] = ucfirst($page); // Capitalize the first letter
 
-	        $this->load->view('header', $data);
+	        $this->load->view('templates/header', $data);
 	        $this->load->view('pages/'.$page, $data);
-	        $this->load->view('footer', $data);
+	        $this->load->view('templates/footer', $data);
         }
 }

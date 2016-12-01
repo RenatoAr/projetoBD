@@ -32,7 +32,7 @@ class Cadastro extends CI_Controller {
                 'pontos_motores'             => $this->input->post('pontos_motores'),
                 'horas_despendidas_motores'  => $this->input->post('horas_despendidas_motores'),
             );
-        $this->db->insert('inspecao', $data);
+        $this->db->query("INSERT into inspecao ('id_inspecao', 'id_aeronave', 'data', '', '') VALUES (222, 212, 1234/12/11)");
         redirect("cadastro");
 
     }

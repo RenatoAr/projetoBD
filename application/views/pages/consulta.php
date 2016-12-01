@@ -9,7 +9,7 @@
             <div class="row">
               <div class="col l12">
                 <form action="#">
-                  <h5><b>Selecione a opção para busca:</b></h5>
+                  <h5><b>Selecione a opção de busca de inspeção por:</b></h5>
                   <br>
                   
                     <input class="with-gap" name="seleciona" type="radio" id="aeronave" />
@@ -26,8 +26,13 @@
                     
                     <input class="with-gap" name="seleciona" type="radio" id="data" />
                     <label for="data">Data</label>
+
+
+                    <input class="with-gap" name="seleciona" type="radio" id="pontuacao" />
+                    <label for="pontuacao">Limite de pontuação</label>
                   
                 </form>
+
               </div>
 
               <br><br>
@@ -37,6 +42,7 @@
                 <input id="icon_telephone" name="busca" type="tel" class="validate">
                 <label for="icon_telephone">ai</label>
               </div>
+
               <div>
                 <input type="submit" value="Buscar" class="waves-effect waves-light btn blue darken-3">              
               </div>

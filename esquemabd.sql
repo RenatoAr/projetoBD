@@ -12,7 +12,7 @@ ADD CONSTRAINT chk_aeronave CHECK (capacidade>0 AND peso>0);
 
 CREATE TABLE tecnico (
 CPF VARCHAR(15) NOT NULL,
-nome VARCHAR(10) NOT NULL,
+nome VARCHAR(70) NOT NULL,
 especialidade VARCHAR(10) NOT NULL,
 anos_experiencia INT(10) NOT NULL,
 ultimo_exame_medico DATETIME NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE teste (
 numero_AFA INT NOT NULL,
 id_inspecao INT NOT NULL,
 horas_despendidas INT(10) NOT NULL,
-nome VARCHAR(10) NOT NULL,
+nome VARCHAR(30) NOT NULL,
 pontuacao FLOAT(10) NOT NULL,
 FOREIGN KEY(id_inspecao) 
 	REFERENCES inspecao (id_inspecao)

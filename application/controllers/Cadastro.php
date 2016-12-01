@@ -15,7 +15,7 @@ class Cadastro extends CI_Controller {
         $data = array(
                 'id_aeronave'                => $this->input->post('id_aeronave'),
                 'id_tecnico'                 => $this->input->post('id_tecnico'),
-                'id_data'                    => $this->input->post('data'),
+                'data'                       => $this->input->post('data'),
 
                 'pontos_pneu'                => $this->input->post('pontos_pneu'),
                 'horas_despendidas_pneu'     => $this->input->post('horas_despendidas_pneu'),
@@ -32,8 +32,8 @@ class Cadastro extends CI_Controller {
                 'pontos_motores'             => $this->input->post('pontos_motores'),
                 'horas_despendidas_motores'  => $this->input->post('horas_despendidas_motores'),
             );
-        //this->db->insert('', $data);
-        redirect("Cadastro/index");
+        $this->db->insert('inspecao', $data);
+        redirect("cadastro");
 
     }
 

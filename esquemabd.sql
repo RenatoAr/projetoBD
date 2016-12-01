@@ -1,49 +1,64 @@
 
-CREATE TABLE Aeronave (
-id_aeronave NUMERIC(10) PRIMARY KEY ,
+CREATE TABLE aeronave (
+id_aeronave NUMERIC(10),
 peso NUMERIC(10) NOT NULL,
 modelo VARCHAR(10) NOT NULL,
 capacidade NUMERIC(10) NOT NULL,
-CHECK ((capacidade > 0) AND (peso > 0)) 
+PRIMARY KEY(id_aeronave)
 );
 
-CREATE TABLE Tecnico (
-CPF NUMERIC(10) PRIMARY KEY,
+ALTER TABLE aeronave
+ADD CONSTRAINT chk_aeronave CHECK (capacidade>0 AND peso>0)
+
+CREATE TABLE tecnico (
+CPF NUMERIC(10),
 nome VARCHAR(10) NOT NULL,
 especialidade VARCHAR(10) NOT NULL,
 anos_experiencia NUMERIC(10) NOT NULL,
 ultimo_exame_medico DATETIME NOT NULL,
-CHECK (anos_experiencia > 0)
+PRIMARY KEY(CPF)
 );
 
-CREATE TABLE Inspecao (
+ALTER TABLE tecnico
+ADD CONSTRAINT chk_tecnico CHECK (anos_experiencia>0)
+
+CREATE TABLE inspecao (
+id_inspecao NUMERIC(10),
 id_aeronave NUMERIC(10),
-id_inspecao NUMERIC(10) PRIMARY KEY,
 data DATETIME NOT NULL,
 pontuacao_total NUMERIC(10) NOT NULL,
 horas_total NUMERIC(10) NOT NULL,
-FOREIGN KEY(id_aeronave) REFERENCES Aeronave (id_aeronave),
-ON UPDATE CASCADE
-CHECK (horas_total > 0)
+FOREIGN KEY(id_aeronave) 
+	REFERENCES aeronave (id_aeronave)
+	ON UPDATE CASCADE,
+PRIMARY KEY(id_inspecao)	
 );
+
+ALTER TABLE inspecao
+ADD CONSTRAINT chk_inspecao CHECK (horas_total>0)
 
 CREATE TABLE efetua (
 id_inspecao NUMERIC(10),
 CPF NUMERIC(10),
-FOREIGN KEY(CPF) REFERENCES Tecnico (CPF),
-FOREIGN KEY(id_inspecao)REFERENCES Inspecao (id_inspecao)
-ON UPDATE CASCADE
-ON UPDATE CASCADE
+FOREIGN KEY(CPF)
+	REFERENCES Tecnico (CPF)
+	ON UPDATE CASCADE,
+FOREIGN KEY(id_inspecao)
+	REFERENCES inspecao (id_inspecao)
+	ON UPDATE CASCADE
 );
 
-CREATE TABLE Teste (
-numero_AFA NUMERIC(10) PRIMARY KEY,
+CREATE TABLE teste (
+numero_AFA NUMERIC(10),
 id_inspecao NUMERIC(10),
 horas_despendidas NUMERIC(10) NOT NULL,
 nome VARCHAR(10) NOT NULL,
 pontuacao NUMERIC(10) NOT NULL,
-FOREIGN KEY(id_inspecao)REFERENCES Inspecao (id_inspecao)
-ON UPDATE CASCADE
-CHECK (horas_despendidas > 0)
+FOREIGN KEY(id_inspecao) 
+	REFERENCES inspecao (id_inspecao)
+	ON UPDATE CASCADE,
+PRIMARY KEY(numero_AFA)	
 );
 
+ALTER TABLE teste
+ADD CONSTRAINT chk_teste CHECK (horas_despendidas>0)

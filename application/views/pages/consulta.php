@@ -7,29 +7,32 @@
         <div class="row" >
           <form class="col l12" action="<?=base_url('index.php/consulta') ?>" target="_blank">
             <div class="row">
-              <div class="col l6">
+              <div class="col l12">
                 <form action="#">
-                  <b>Selecione a opção para busca:</b>
-                  <p>
-                    <input name="aeronave" type="radio" id="test1" />
-                    <label for="test1">Aeronave</label>
-                  </p>
-                  <p>
-                    <input name="inspecao" type="radio" id="test2" />
-                    <label for="test2">Inspeção</label>
-                  </p>
-                  <p>
-                    <input class="with-gap" name="tecnico" type="radio" id="test3"  />
-                    <label for="test3">Técnico</label>
-                  </p>
-                    <p>
-                      <input name="data" type="radio" id="test4" />
-                      <label for="test4">Data</label>
-                  </p>
+                  <h5><b>Selecione a opção para busca:</b></h5>
+                  <br>
+                  
+                    <input class="with-gap" name="seleciona" type="radio" id="aeronave" />
+                    <label for="aeronave">Aeronave</label>
+                  
+                  
+                    <input class="with-gap" name="seleciona" type="radio" id="inspecao" />
+                    <label for="inspecao">Inspeção</label>
+                  
+                  
+                    <input class="with-gap" name="seleciona" type="radio" id="tecnico"  />
+                    <label for="tecnico">Técnico</label>
+                  
+                    
+                    <input class="with-gap" name="seleciona" type="radio" id="data" />
+                    <label for="data">Data</label>
+                  
                 </form>
               </div>
-              <br>
-              <div class="input-field col l6">
+
+              <br><br>
+
+              <div class="input-field col l10 center-align">
                 <i class="material-icons prefix">search</i>
                 <input id="icon_telephone" name="busca" type="tel" class="validate">
                 <label for="icon_telephone">ai</label>

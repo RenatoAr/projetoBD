@@ -23,7 +23,7 @@ data DATETIME NOT NULL,
 pontuacao_total NUMERIC(10) NOT NULL,
 horas_total NUMERIC(10) NOT NULL,
 FOREIGN KEY(id_aeronave) REFERENCES Aeronave (id_aeronave),
-ON UPDATE CASCADE,
+ON UPDATE CASCADE
 CHECK (horas_total > 0)
 );
 
@@ -32,6 +32,8 @@ id_inspecao NUMERIC(10),
 CPF NUMERIC(10),
 FOREIGN KEY(CPF) REFERENCES Tecnico (CPF),
 FOREIGN KEY(id_inspecao)REFERENCES Inspecao (id_inspecao)
+ON UPDATE CASCADE
+ON UPDATE CASCADE
 );
 
 CREATE TABLE Teste (
@@ -41,5 +43,7 @@ horas_despendidas NUMERIC(10) NOT NULL,
 nome VARCHAR(10) NOT NULL,
 pontuacao NUMERIC(10) NOT NULL,
 FOREIGN KEY(id_inspecao)REFERENCES Inspecao (id_inspecao)
+ON UPDATE CASCADE
+CHECK (horas_despendidas > 0)
 );
 

@@ -8,8 +8,8 @@
             <label for="first_name">ID Aeronave</label>
           </div>
           <div class="input-field col l4">
-            <input id="last_name" type="text" class="validate" name="id_tecnico">
-            <label for="last_name">ID Técnico</label>
+            <input id="last_name" type="text" class="validate" name="CPF">
+            <label for="last_name">CPF Técnico</label>
           </div>
           <div class="input-field col l4">
             <input  id="disabled" type="date" class="validate" name="data">

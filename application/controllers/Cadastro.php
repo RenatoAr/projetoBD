@@ -14,7 +14,7 @@ class Cadastro extends CI_Controller {
     public function save(){
         $data = array(
                 'id_aeronave'                => $this->input->post('id_aeronave'),
-                'id_tecnico'                 => $this->input->post('id_tecnico'),
+                'CPF'                        => $this->input->post('CPF'),
                 'data'                       => $this->input->post('data'),
 
                 'pontos_pneu'                => $this->input->post('pontos_pneu'),
@@ -32,9 +32,28 @@ class Cadastro extends CI_Controller {
                 'pontos_motores'             => $this->input->post('pontos_motores'),
                 'horas_despendidas_motores'  => $this->input->post('horas_despendidas_motores'),
             );
-        $this->db->query("INSERT into inspecao ('id_inspecao', 'id_aeronave', 'data') VALUES ('222', '212', '1234/12/11')");
-        redirect("cadastro");
 
+        //Guarda o resultado da consulta da aeronave em $result e do tecnico em $result2
+        $result = $this->db->query( "SELECT id_aeronave FROM aeronave WHERE id_aeronave=' ".$this->input->post('id_aeronave')." ' " );
+        $result2 = $this->db->query( "SELECT CPF FROM tecnico WHERE CPF= ".$this->input->post('CPF') );
+
+        //Verifica se há alguma aeronave cadastrada
+        if( $result->num_rows() == 0 ){
+            //aeronave não cadastrada
+
+        }
+        //Verifica se há algum técnico cadastrado
+        else if($result2->num_rows() == 0 ){
+            //tecnico não cadastrado
+
+        }
+
+        //cadastrar os inputs
+        else{
+            //$this->db->query("INSERT into 'teste' ('numero_AFA', 'id_inspecao', 'horas_despendidas', 'nome', 'pontuacao') VALUES ('222', '212', '1234/12/11')");
+
+            redirect("cadastro");
+        }
     }
 
     public function view($page = 'home')

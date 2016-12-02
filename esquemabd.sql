@@ -1,14 +1,11 @@
 
 CREATE TABLE aeronave (
-id_aeronave INT NOT NULL,
+id_aeronave INT NOT NULL AUTO_INCREMENT,
 peso INT(10) NOT NULL,
 modelo VARCHAR(10) NOT NULL,
 capacidade INT(10) NOT NULL,
 PRIMARY KEY(id_aeronave)
 );
-
-ALTER TABLE aeronave
-ADD CONSTRAINT chk_aeronave CHECK (capacidade>0 AND peso>0);
 
 CREATE TABLE tecnico (
 CPF VARCHAR(15) NOT NULL,
@@ -19,11 +16,8 @@ ultimo_exame_medico DATETIME NOT NULL,
 PRIMARY KEY(CPF)
 );
 
-ALTER TABLE tecnico
-ADD CONSTRAINT chk_tecnico CHECK (anos_experiencia>0);
-
 CREATE TABLE inspecao (
-id_inspecao INT NOT NULL,
+id_inspecao INT NOT NULL AUTO_INCREMENT,
 id_aeronave INT NOT NULL,
 data DATETIME NOT NULL,
 pontuacao_total FLOAT(10) NOT NULL,
@@ -33,9 +27,6 @@ FOREIGN KEY(id_aeronave)
 	ON UPDATE CASCADE,
 PRIMARY KEY(id_inspecao)	
 );
-
-ALTER TABLE inspecao
-ADD CONSTRAINT chk_inspecao CHECK (horas_total>0);
 
 CREATE TABLE efetua (
 id_inspecao INT NOT NULL,
@@ -49,7 +40,7 @@ FOREIGN KEY(id_inspecao)
 );
 
 CREATE TABLE teste (
-numero_AFA INT NOT NULL,
+numero_AFA INT NOT NULL AUTO_INCREMENT,
 id_inspecao INT NOT NULL,
 horas_despendidas INT(10) NOT NULL,
 nome VARCHAR(30) NOT NULL,
@@ -59,6 +50,15 @@ FOREIGN KEY(id_inspecao)
 	ON UPDATE CASCADE,
 PRIMARY KEY(numero_AFA)	
 );
+
+ALTER TABLE aeronave
+ADD CONSTRAINT chk_aeronave CHECK (capacidade>0 AND peso>0);
+
+ALTER TABLE tecnico
+ADD CONSTRAINT chk_tecnico CHECK (anos_experiencia>0);
+
+ALTER TABLE inspecao
+ADD CONSTRAINT chk_inspecao CHECK (horas_total>0);
 
 ALTER TABLE teste
 ADD CONSTRAINT chk_teste CHECK (horas_despendidas>0);
